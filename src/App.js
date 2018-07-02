@@ -35,9 +35,9 @@ class GetGreeting extends React.Component {
     }
 
     // This syntax ensures 'this' is bound within handleClick via self.
-    // Warning: this is *experimental* syntax.
+    // NOTE: this is *experimental* syntax.
     handleClick = () => {
-        var self = this;
+        const self = this;
         axios.get('http://localhost:8080/greeting')
             .then(function (response) {
                 self.setState({response: " " +
@@ -47,7 +47,7 @@ class GetGreeting extends React.Component {
             .catch(function (error) {
                 alert('Greeting call error= ' + error.toString());
             });
-    }
+    };
 
     render() {
         return (
